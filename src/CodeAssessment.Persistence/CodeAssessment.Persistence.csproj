@@ -3,7 +3,6 @@
   <ItemGroup>
     <ProjectReference Include="..\CodeAssessment.Domain\CodeAssessment.Domain.csproj" />
     <ProjectReference Include="..\CodeAssessment.Application\CodeAssessment.Application.csproj" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.8" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
   </ItemGroup>
 

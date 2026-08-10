@@ -3,6 +3,7 @@ using System;
 using CodeAssessment.Persistence;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -11,9 +12,11 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CodeAssessment.Persistence.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260810181156_AddTableExpectation")]
+    partial class AddTableExpectation
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,6 +28,7 @@ namespace CodeAssessment.Persistence.Migrations
             modelBuilder.Entity("CodeAssessment.Domain.Entities.Expectation", b =>
                 {
                     b.Property<Guid?>("PlanningId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
                     b.Property<DateTime?>("CreatedAt")
@@ -48,10 +52,15 @@ namespace CodeAssessment.Persistence.Migrations
                     b.Property<string>("LastUpdatedBy")
                         .HasColumnType("text");
 
+                    b.Property<Guid>("PlanningId")
+                        .HasColumnType("uuid");
+
                     b.Property<string>("Slot")
                         .HasColumnType("text");
 
                     b.HasKey("PlanningId");
+
+                    b.HasIndex("PlanningId");
 
                     b.ToTable("Expectations");
                 });
@@ -83,9 +92,6 @@ namespace CodeAssessment.Persistence.Migrations
                     b.Property<string>("LastUpdatedBy")
                         .HasColumnType("text");
 
-                    b.Property<Guid>("RequestCode")
-                        .HasColumnType("uuid");
-
                     b.Property<string>("Slot")
                         .HasColumnType("text");
 
@@ -93,9 +99,6 @@ namespace CodeAssessment.Persistence.Migrations
                         .HasColumnType("boolean");
 
                     b.HasKey("PlanningId");
-
-                    b.HasIndex("RequestCode")
-                        .IsUnique();
 
                     b.ToTable("Plannings");
                 });
