@@ -11,15 +11,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAssessment.Application"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAssessment.Infrastructure", "src\CodeAssessment.Infrastructure\CodeAssessment.Infrastructure.csproj", "{EBD01CF9-C970-43FB-BE5B-6B7C8B41DCC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAssessment.API", "src\CodeAssessment.API\CodeAssessment.API.csproj", "{10CF3865-D115-402A-B120-76A0744888A2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAssessment.API", "src\CodeAssessment.API1\CodeAssessment.API.csproj", "{10CF3865-D115-402A-B120-76A0744888A2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{68157E75-A16A-4C9A-B94C-FF144A78BAB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -38,6 +35,9 @@ Global
 		{10CF3865-D115-402A-B120-76A0744888A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10CF3865-D115-402A-B120-76A0744888A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10CF3865-D115-402A-B120-76A0744888A2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{68157E75-A16A-4C9A-B94C-FF144A78BAB6} = {027B4A68-94D9-4C64-9926-8D05026138EF}
