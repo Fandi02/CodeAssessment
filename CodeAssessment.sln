@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAssessment.Infrastructu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAssessment.API", "src\CodeAssessment.API1\CodeAssessment.API.csproj", "{10CF3865-D115-402A-B120-76A0744888A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeAssessment.Persistence", "src\CodeAssessment.Persistence\CodeAssessment.Persistence.csproj", "{C6E7BC41-A40A-4BAC-88A9-D298EB1FD81E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{10CF3865-D115-402A-B120-76A0744888A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10CF3865-D115-402A-B120-76A0744888A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10CF3865-D115-402A-B120-76A0744888A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6E7BC41-A40A-4BAC-88A9-D298EB1FD81E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6E7BC41-A40A-4BAC-88A9-D298EB1FD81E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6E7BC41-A40A-4BAC-88A9-D298EB1FD81E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6E7BC41-A40A-4BAC-88A9-D298EB1FD81E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,5 +50,6 @@ Global
 		{CC463B19-27C9-4DC9-8209-CADFAD5E25DA} = {027B4A68-94D9-4C64-9926-8D05026138EF}
 		{EBD01CF9-C970-43FB-BE5B-6B7C8B41DCC7} = {027B4A68-94D9-4C64-9926-8D05026138EF}
 		{10CF3865-D115-402A-B120-76A0744888A2} = {027B4A68-94D9-4C64-9926-8D05026138EF}
+		{C6E7BC41-A40A-4BAC-88A9-D298EB1FD81E} = {027B4A68-94D9-4C64-9926-8D05026138EF}
 	EndGlobalSection
 EndGlobal

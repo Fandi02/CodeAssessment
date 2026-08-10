@@ -8,11 +8,14 @@
 
   <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\CodeAssessment.Application\CodeAssessment.Application.csproj" />
     <ProjectReference Include="..\CodeAssessment.Infrastructure\CodeAssessment.Infrastructure.csproj" />
+    <ProjectReference Include="..\CodeAssessment.Persistence\CodeAssessment.Persistence.csproj" />
   </ItemGroup>
 
 </Project>
