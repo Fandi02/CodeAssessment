@@ -22,20 +22,44 @@ public class CarsProductionController : ControllerBase
     }
 
     [HttpPost(Name = "ExpectationCars")]
-    public async Task<List<int>> ExpectationCars([FromBody] RequestSaveModel request)
+    public async Task<IActionResult> ExpectationCars([FromBody] RequestSaveModel request)
     {
-        return await _carsProduction.CarsProductions(request.Plan, request.RequestCode);
+        try
+        {
+            var result = await _carsProduction.CarsProductions(request.Plan, request.RequestCode);
+            return Ok(ApiResponse<List<int>>.Success(result, "Data saved successfully", 200));
+        }
+        catch(Exception ex)
+        {
+            return BadRequest(ApiResponse<List<int>>.Failure(ex.Message, 400));
+        }
     }
 
     [HttpGet("GetExpectationCars")]
-    public async Task<List<GetCarsProductivityModels>> GetListExpectationCars([FromQuery] RequestGetListModel request)
+    public async Task<IActionResult> GetListExpectationCars([FromQuery] RequestGetListModel request)
     {
-        return await _getList.HandleAsync(request.Page, request.Size);
+        try
+        {
+            var result = await _getList.HandleAsync(request.Page, request.Size);
+            return Ok(ApiResponse<List<GetCarsProductivityModels>>.Success(result, "Data saved successfully", 200));
+        }
+        catch(Exception ex)
+        {
+            return BadRequest(ApiResponse<List<GetCarsProductivityModels>>.Failure(ex.Message, 400));
+        }
     }
 
     [HttpGet("GetExpectationCars/{planningId}")]
-    public async Task<GetCarsProductivityModels> GetExpectationCarsById([FromRoute] Guid planningId)
+    public async Task<IActionResult> GetExpectationCarsById([FromRoute] Guid planningId)
     {
-        return await _getById.HandleAsync(planningId);
+        try
+        {
+            var result = await _getById.HandleAsync(planningId);
+            return Ok(ApiResponse<GetCarsProductivityModels>.Success(result, "Data saved successfully", 200));
+        }
+        catch(Exception ex)
+        {
+            return BadRequest(ApiResponse<GetCarsProductivityModels>.Failure(ex.Message, 400));
+        }
     }
 }

@@ -1,0 +1,12 @@
+## Prasyarat
+- [.NET 8 SDK]
+- [Postgres]
+- [dotnet-ef]
+
+## Langkah-langkah
+ 
+1. **Clone repository**
+2. **Restore dependencies**
+3. **Buat Database**
+4. **Jalankan database update**
+5. **Jalankan aplikasi**
