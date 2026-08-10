@@ -1,9 +1,15 @@
+using CodeAssessment.Application.Business.CarsProduction.Commands;
 using CodeAssessment.Application.Interface;
 
 namespace CodeAssessment.Application.Business;
-public class CarsProduction : ICarsProduction
+public class CarsProductionService : ICarsProductionService
 {
-    public async Task<List<int>> CarsProductions (List<decimal> plan)
+    private ISaveProductionCommand _saveCars;
+    public CarsProductionService(ISaveProductionCommand saveCars)
+    {
+        _saveCars = saveCars;
+    }
+    public async Task<List<int>> CarsProductions (List<decimal> plan, Guid requestCode)
     {    
         if(plan is null || plan.Count == 0)
             throw new ArgumentException("Plan tidak boleh kosong.");
@@ -52,6 +58,15 @@ public class CarsProduction : ICarsProduction
             var originalIndex = sortedPlan[i].Index;
             expectationResult[originalIndex] += 1;
             sisaNilai -= 1;
+        }
+
+        try
+        {
+            await _saveCars.HandleAsync(plan, expectationResult, requestCode);
+        }
+        catch (System.Exception ex)
+        {
+            throw new Exception("Message" + ex);
         }
 
         return expectationResult;

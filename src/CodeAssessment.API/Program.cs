@@ -1,4 +1,5 @@
 using CodeAssessment.Application.Business;
+using CodeAssessment.Application.Business.CarsProduction.Commands;
 using CodeAssessment.Application.Interface;
 using CodeAssessment.Persistence;
 using Microsoft.EntityFrameworkCore;
@@ -19,7 +20,11 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<ICarsProduction, CarsProduction>();
+builder.Services.AddScoped<ICarsProductionService, CarsProductionService>();
+builder.Services.AddScoped<IGetListCarsProductionQuery, GetListCarsProductionQuery>();
+builder.Services.AddScoped<IGetCarsProductionByIdQuery, GetCarsProductionByIdQuery>();
+builder.Services.AddTransient<ISaveProductionCommand, SaveCarsProduction>();
+builder.Services.AddTransient<IAppDbContext, AppDbContext>();
 
 var app = builder.Build();
 
